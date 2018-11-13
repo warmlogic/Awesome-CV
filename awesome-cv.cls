@@ -378,8 +378,8 @@
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{2mm}
-\newcommand{\acvSectionContentTopSkip}{2.5mm}
+\newcommand{\acvSectionTopSkip}{1mm} % space above each section
+\newcommand{\acvSectionContentTopSkip}{2mm} % space between section title and content
 
 
 %-------------------------------------------------------------------------------
@@ -606,7 +606,7 @@
 % Define an environment for cvhonor
 \newenvironment{cvhonors}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-2mm}
+  \vspace{-3.0mm}
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
@@ -625,11 +625,12 @@
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-2.0mm}
+  \vspace{-3.0mm}
   \begin{center}
     \setlength\tabcolsep{1ex}
-    \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.75}}}
+    \setlength{\extrarowheight}{-3pt}
+    % MVM NB: change p column multipliers to adjust width of skill type and set columns
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} p{\textwidth * \real{0.25}} p{\textwidth * \real{0.72}}}
 }{%
     \end{tabular*}
   \end{center}
